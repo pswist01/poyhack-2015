@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-from zeroconf import ServiceBrowser, Zeroconf
 from six.moves import input
 
 import json
