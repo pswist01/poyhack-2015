@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sexile</title>
+        <link rel="shortcut icon"
+                    href="{{ url_for('static', filename='img/favicon.ico') }}">
+        <link rel="stylesheet" type="type/css"
+                            href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+    <center><h1>Here are some activities to keep you busy while I'm busy</h1></center>
+        {% for attraction in attractions %}
+        <div id="listitem">
+            <h2><a href="{{ attraction['link'] }}"><center><button type="button">
+                            {{ attraction['name'] }}</button></center></a></h2>
+        <p>Rating: {{ attraction['rating'] }}</p>
+        </div>
+        {% endfor %}
+    </body>
+</html>
