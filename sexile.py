@@ -13,12 +13,13 @@ def mainview():
     
 @app.route('/tripadvisor/')
 def trip():
-        url = "http://api.tripadvisor.com/api/partner/2.0/location/89575?key=5A21D499D9BD4ECBAEDD8DDA312AB087"
+        url = "http://api.tripadvisor.com/api/partner/2.0/map/42.33141,-71.099396/attractions?key=5A21D499D9BD4ECBAEDD8DDA312AB087"
         values = json.loads(requests.get(url).content)
-        for item in values:
-                print item
-                print values[item]
-        return "poop"
+        list = []
+        for x in range(0, 5): 
+            list.append({'name': values['data'][x]['name'], 'link': values['data'][x]['web_url']})
+                
+        return render_template('index.html', attractions=list)
 
 
 

@@ -7,7 +7,9 @@
                     href="{{ url_for('static', filename='img/favicon.ico') }}">
     </head>
     <body>
-        <h1>Header</h1>
-        <p>words go here</p>
+        <h1>Here are some activities to keep you busy while I'm busy</h1>
+        {% for attraction in attractions %}
+        <h2><a href="{{ attraction['link'] }}">{{ attraction['name'] }}</a></h2>
+        {% endfor %}
     </body>
 </html>
