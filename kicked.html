@@ -9,12 +9,13 @@
                             href="{{ url_for('static', filename='css/style.css') }}">
     </head>
     <body>
-    <center><h1>Here are some activities to keep you busy while I'm busy</h1></center>
+    <center><h1>Keep yourself busy while I'm busy:</h1></center>
         {% for attraction in attractions %}
         <div id="listitem">
-            <h2><a href="{{ attraction['link'] }}"><center><button type="button">
-                            {{ attraction['name'] }}</button></center></a></h2>
-        <p>Rating: {{ attraction['rating'] }}</p>
+            <h3><a href="{{ attraction['link'] }}"><center><button type="button">
+                            <div>{{ attraction['name'] }} </div>
+                            <div> Rating: {{ attraction['rating'] }}</div>
+                        </button></center></a><h3>
         </div>
         {% endfor %}
     </body>
